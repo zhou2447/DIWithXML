@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--Here, an instance of ServiceA class is declared using the <bean> tag as follows:-->
+    <bean id="service1" class="net.java.ServiceA" />
+    <!--This bean name service1 is injected to the constructor of an instance of ClientA as follows:-->
+    <bean id="client1" class="net.java.ClientA">
+        <constructor-arg ref="service1" />
+    </bean>
+</beans>
